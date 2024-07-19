@@ -1,41 +1,41 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
-    {
-        name: "work", 
-        path: "/"
-    }, 
-    {
-        name: "resume", 
-        path: "/resume"
-    }, 
-    {
-        name: "contact", 
-        path: "/contact"
-    }, 
-]
+  {
+    name: "work",
+    path: "/work",
+  },
+  {
+    name: "About me",
+    path: "/resume",
+  },
+  {
+    name: "Get in touch",
+    path: "/contact",
+  },
+];
 
 const Nav = () => {
-    const pathname = usePathname();
+  const pathname = usePathname();
+    {/**TODO CUTE HOVER EFFECT LIKE JIACHENG DID FOR FUN */}
+  return (
+    <nav className="flex gap-8">
+      {links.map((link, index) => {
+        return (
+          <Link
+            href={link.path}
+            key={index}
+            className={`capitalize font-light text-xl transition-all tracking-tight ${link.path === pathname ? " text-white" : "text-white/45 hover:text-white"}`}
+          >
+            {link.name}<span className="text-accent">.</span>
+          </Link>
+        );
+      })}
+    </nav>
+  );
+};
 
-    return (
-        <nav className="flex gap-8">
-            {links.map((link, index) => {
-                return( 
-                <Link 
-                    href={link.path} 
-                    key={index}
-                    className={`${link.path === pathname && "text-accent border-b-2 border-accent"}
-                    capitalize font-light text-xl hover:text-accent transition-all`}>
-                    {link.name}
-                </Link>
-                );
-            })}
-        </nav>
-    )
-}
-
-export default Nav
+export default Nav;

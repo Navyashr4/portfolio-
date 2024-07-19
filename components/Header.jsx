@@ -7,12 +7,12 @@ import Nav from "./Nav"
 
 const Header = () => {
   return (
-    <header className="py-8 xl:py-12 text-white px-8">
+    <header className="sticky top-0 bg-black bg-opacity-50 backdrop-blur-md z-50 py-8 xl:py-12 text-white px-8">
         <div className="mx-auto flex justify-between items-center">
           {/* Logo */}
           <Link href="/">
-            <h1 className="text-2xl font-light">
-              Navya Vedachala<span className="text-accent">.</span>
+            <h1 className="text-xl font-light">
+              Navya Vedachala
             </h1>
           </Link>
 
