@@ -7,7 +7,7 @@ import Nav from "./Nav"
 
 const Header = () => {
   return (
-    <header className="sticky top-0 bg-black bg-opacity-50 backdrop-blur-md z-50 py-8 xl:py-12 text-white px-8">
+    <header className="sticky top-0 bg-black bg-opacity-50 backdrop-blur-md z-50 py-8 xl:py-12 text-white px-8 lg:px-16">
         <div className="mx-auto flex justify-between items-center">
           {/* Logo */}
           <Link href="/">
@@ -17,12 +17,12 @@ const Header = () => {
           </Link>
 
           {/* desktop nav and hire me button*/}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             <Nav />
           </div>
 
           {/* mobile nav*/}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <MobileNav />
           </div>
 
