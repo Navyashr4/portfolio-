@@ -7,15 +7,19 @@ import {CiMenuFries} from "react-icons/ci"
 
 const links = [
     {
-        name: "work", 
+        name: "Home", 
         path: "/"
     }, 
     {
-        name: "resume", 
+        name: "work", 
+        path: "/work"
+    }, 
+    {
+        name: "About me", 
         path: "/resume"
     }, 
     {
-        name: "contact", 
+        name: "Get in touch", 
         path: "/contact"
     }, 
 ]
@@ -31,8 +35,8 @@ const MobileNav = () => {
             <SheetContent className="border-none">
                 <div className="mt-32 mb-40 text-center text-2xl">
                     <Link href="/">
-                        <h1 className="text-4xl font-semibold">
-                            Navya<span className="text-accent">.</span>
+                        <h1 className="text-xl font-light">
+                            Navya Vedachala
                         </h1>
                     </Link>
                 </div>
@@ -41,9 +45,8 @@ const MobileNav = () => {
                         return(
                             <Link 
                                 href={link.path} 
-                                key={index} 
-                                className={`${link.path === pathname && "text-accent border-b-2 border-accent"} text-xl capitalize hover:text-accent transition-all`}>
-                                {link.name}
+                                key={index} className={`capitalize font-light text-xl transition-all tracking-tight ${link.path === pathname ? " text-white" : "text-white/45 hover:text-white"}`}>
+                                {link.name}<span className="text-accent">.</span>
                             </Link>
                         );
                     })}
